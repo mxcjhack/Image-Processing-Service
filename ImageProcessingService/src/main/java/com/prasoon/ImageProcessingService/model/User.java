@@ -1,22 +1,26 @@
 package com.prasoon.ImageProcessingService.model;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Entity
+@AllArgsConstructor
+@Builder
+@NoArgsConstructor
+@Table(name = "users")
 public class User {
 
-    private final String firstName;
-    private final String lastName;
+    private  String firstName;
+    private  String lastName;
     @Id
-    private final String email;
-    private final String password;
+    private  String email;
+    private  String password;
 
     @Enumerated(EnumType.STRING)
-    private final Role role;
+    private  Role role;
 }

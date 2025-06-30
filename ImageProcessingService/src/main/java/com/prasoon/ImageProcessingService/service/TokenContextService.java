@@ -1,5 +1,7 @@
 package com.prasoon.ImageProcessingService.service;
 
+import com.prasoon.ImageProcessingService.exception.BadRequestException;
+import com.prasoon.ImageProcessingService.exception.UnauthorizedException;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

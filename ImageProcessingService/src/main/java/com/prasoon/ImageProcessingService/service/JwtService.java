@@ -68,15 +68,6 @@ public class JwtService {
                 .compact();
     }
 
-    public String generateRefreshToken(User user) {
-        return Jwts.builder()
-                .subject(user.getEmail())
-                .issuedAt(new Date())
-                .expiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 24 ))
-                .signWith(secretKeyProvider.getKey())
-                .compact();
-    }
-
     public boolean isTokenValid(String token, UserDetails userDetails) {
         final String username = extractUserEmail(token);
         return (username.equalsIgnoreCase(userDetails.getUsername()) && !isTokenExpired(token));
